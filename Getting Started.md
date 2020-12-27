@@ -80,3 +80,9 @@ security_token     <nil>
 I can repeat this command to generate more roles.
 
 But what's the vault command to list the roles it was created? Because I need to list these roles and revoke one of them
+
+## The second part of "github authentication" is confusing.
+
+https://learn.hashicorp.com/tutorials/vault/getting-started-authentication?in=vault/getting-started#github-authentication
+
+After read and follow the steps, I still don't know what to do with it.
