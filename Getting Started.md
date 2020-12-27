@@ -58,3 +58,7 @@ Root Token: s.Gd5HSuBB87nSeYMOsdwaMOCk
 
 Development mode should NOT be used in production installations!
 ```
+
+### How to list the generated roles after generate dynamic secretes.
+
+The learn course doesn't tell you how to list the roles after `vault read aws/roles/my-role`, after you run the commands several time, you will face this issue.
