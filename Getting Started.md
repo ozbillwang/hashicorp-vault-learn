@@ -1,6 +1,6 @@
 # Getting Started
 
-### start vault as service on mac, but where is the rook token?
+## start vault as service on mac, but where is the rook token?
 
 After you installed vault on mac with command `brew install vault`, you are prompt to start vault server with two ways.
 
@@ -16,7 +16,7 @@ Or, if you don't want/need a background service you can just run:
 
 If you start it with first way, you will be confused on where I can get the unseal key and root token.
 
-Here is the answer:
+#### Here is the answer:
 
 ```
 $ brew services list
@@ -59,6 +59,24 @@ Root Token: s.Gd5HSuBB87nSeYMOsdwaMOCk
 Development mode should NOT be used in production installations!
 ```
 
-### How to list the generated roles after generate dynamic secretes.
+## how to list roles generated via dynamic secrets
 
-The learn course doesn't tell you how to list the roles after `vault read aws/roles/my-role`, after you run the commands several time, you will face this issue.
+I have set dynamic secrets (type is aws), and I can generate roles with it. 
+
+```
+$ vault read aws/creds/my-role
+
+Key                Value
+---                -----
+lease_id           aws/creds/my-role/1M0p1H0USTLPto0fWyKFi6Hc
+lease_duration     768h
+lease_renewable    true
+access_key         AKIA5JKGG7DERBxxxx
+secret_key         d1QX7oCt7j6YpXxxxx
+security_token     <nil>
+
+```
+
+I can repeat this command to generate more roles.
+
+But what's the vault command to list the roles it was created? Because I need to list these roles and revoke one of them
